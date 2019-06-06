@@ -58,11 +58,11 @@ public class CustomResourceServerConfig extends ResourceServerConfigurerAdapter 
 	public void configure(HttpSecurity http) throws Exception {
 		http
 				.authorizeRequests()
-				.antMatchers(HttpMethod.GET, "/api/**").access("#oauth2.hasAnyScope('get','admin')")
-				.antMatchers(HttpMethod.POST, "/api/**").access("#oauth2.hasAnyScope('post','admin')")
-				.antMatchers(HttpMethod.PUT, "/api/**").access("#oauth2.hasAnyScope('put','admin')")
-				.antMatchers(HttpMethod.DELETE, "/api/**").access("#oauth2.hasAnyScope('delete','admin')")
-				.antMatchers(HttpMethod.PATCH, "/api/**").access("#oauth2.hasAnyScope('patch','admin')")
+				.antMatchers(HttpMethod.GET, "/api/**").access("#oauth2.hasAnyScope('role_get','admin')")
+				.antMatchers(HttpMethod.POST, "/api/**").access("#oauth2.hasAnyScope('role_post','admin')")
+				.antMatchers(HttpMethod.PUT, "/api/**").access("#oauth2.hasAnyScope('role_put','admin')")
+				.antMatchers(HttpMethod.DELETE, "/api/**").access("#oauth2.hasAnyScope('role_delete','admin')")
+				.antMatchers(HttpMethod.PATCH, "/api/**").access("#oauth2.hasAnyScope('role_patch','admin')")
 				.requestMatchers(EndpointRequest.to("loggers")).access("#oauth2.hasScope('admin')");
 
 	}
