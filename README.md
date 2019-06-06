@@ -14,14 +14,15 @@
 See application.yml.
   
 ```yml
-  security:
-    oauth2:
-      resource:
-        id: test-autorisation-api
-        jwt:
-          token-uri: https://<server>/oauth/token
-          key-set-uri: https://<server>/oauth/token_keys
+security:
+  oauth2:
+    resource:
+      id: test-autorisation-api
+      jwt:
+        token-uri: https://<server>/oauth/token
+        key-set-uri: https://<server>/oauth/token_keys
 ```
+
 
 ### Where :
     * security.oauth2.resource.jwt.key-set-uri ( endpoint exposing the signature keys )
