@@ -6,7 +6,7 @@ server:
 security:
   oauth2:
     resource:
-      id: isaac-autorisation-api
+      id: test-autorisation-api
       jwt:
         token-uri: https://<server>/oauth/token
         key-set-uri: https://<server>/oauth/token_keys
