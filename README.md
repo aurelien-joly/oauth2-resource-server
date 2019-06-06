@@ -13,7 +13,7 @@
 
 See application.yml.
   
-```yml
+~~~yml
 security:
   oauth2:
     resource:
@@ -21,10 +21,10 @@ security:
       jwt:
         token-uri: https://<server>/oauth/token
         key-set-uri: https://<server>/oauth/token_keys
-```
+~~~
 
 
 ### Where :
-    * security.oauth2.resource.jwt.key-set-uri ( endpoint exposing the signature keys )
-    * security.oauth2.resource.jwt.token-uri ( endpoint used to get token, used by swagger )
-    * security.oauth2.resource.id is the resource id ( audience in the token )
+ * security.oauth2.resource.jwt.key-set-uri ( endpoint exposing the signature keys )
+ * security.oauth2.resource.jwt.token-uri ( endpoint used to get token, used by swagger )
+ * security.oauth2.resource.id is the resource id ( audience in the token )
