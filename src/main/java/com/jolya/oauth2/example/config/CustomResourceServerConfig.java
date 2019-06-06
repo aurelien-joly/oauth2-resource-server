@@ -18,9 +18,6 @@ import org.springframework.security.oauth2.provider.token.store.jwk.JwkTokenStor
 @EnableResourceServer
 public class CustomResourceServerConfig extends ResourceServerConfigurerAdapter {
 
-	//map to the aud in the ouath2 otken
-	@Value(value = "${security.oauth2.resource.id}")
-	private String resourceId;
 
 	//url for the recuperation of the public key
 	@Value("${security.oauth2.resource.jwt.key-set-uri}")
@@ -28,7 +25,6 @@ public class CustomResourceServerConfig extends ResourceServerConfigurerAdapter 
 
 	@Override
 	public void configure(ResourceServerSecurityConfigurer resources) {
-		resources.resourceId(this.resourceId);
 		resources.tokenServices(tokenServices());
 	}
 
@@ -47,7 +43,7 @@ public class CustomResourceServerConfig extends ResourceServerConfigurerAdapter 
 
 	@Bean
 	public JwtAccessTokenConverter createJwtAccessTokenConverter() {
-		return new JwtAccessTokenConverter();
+		return new CustomJwtAccessTokenConverter();
 	}
 
 
